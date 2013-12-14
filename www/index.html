@@ -20,7 +20,43 @@
 
 <body>
 
-<!-- Start of first page: #one -->
+<!-- Login View -->
+<div data-role="page" id="Login">
+
+        <div data-role="header">
+                <h1>GradeStar</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" >
+	  <a href="#ParentView" data-role="button">Parent Login</a>
+	  <a href="#StudentView" data-role="button">Student Login</a>
+	</div>
+</div><!-- Login -->
+
+<!-- Parent View -->
+<div data-role="page" id="ParentView">
+
+        <div data-role="header">
+                <h1>GradeStar</h1>
+        </div><!-- /header -->
+
+        <div data-role="content" >
+                <h2>Reward zone</h2> 
+                <ul data-role="listview" data-inset="true" data-divider-theme="d">
+                  <li><a href="#"> Buy staff</a></li>
+                </ul>        
+                <h2>Goal list</h2>     
+                <ul data-role="listview" data-inset="true" data-divider-theme="d">
+                        <li><a href="#GoalView">A+ Math</a></li>
+                        <li><a href="#GoalView">3 A's</a></li>
+                        <li><a href="#GoalView">Wash my car</a></li>
+                        <li><a href="#GoalView">First 3 places in Match competition</a></li>
+                </ul>
+        </div>
+ 
+</div><!-- Parent View -->
+
+<!-- Student View -->
 <div data-role="page" id="StudentView">
 
         <div data-role="header">
@@ -41,26 +77,9 @@
                 </ul>
         </div>
  
-</div><!-- /page one -->
+</div><!-- Student View -->
 
-<!-- Start of second page: #two -->
-<div data-role="page" id="two" data-theme="a">
-
-        <div data-role="header">
-                <h1>Two</h1>
-        </div><!-- /header -->
-
-        <div data-role="content" data-theme="a">
-                <h2>Two</h2>
-                <p>I have an id of "two" on my page container. I'm the second page container in this multi-page template.</p>
-                <p>Notice that the theme is different for this page because we've added a few <code>data-theme</code> swatch assigments here to show off how flexible it is. You can add any content or widget to these pages, but we're keeping these simple.</p>
-                <p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to page "one"</a></p>
-
-        </div><!-- /content -->
-
-</div><!-- /page two -->
-
-<!-- Start of third page: #popup -->
+<!-- Goal View -->
 <div data-role="page" id="GoalView">
 
         <div data-role="header" data-theme="e">
@@ -89,7 +108,7 @@
         
         </div><!-- /content -->
 
-</div><!-- /page popup -->
+</div><!-- Goal View -->
 
 </body>
 </html>

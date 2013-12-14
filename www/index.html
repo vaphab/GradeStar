@@ -23,7 +23,43 @@
 
   <body>
 
-    <!-- Start of first page: #one -->
+    <!-- Login View -->
+    <div data-role="page" id="Login">
+
+      <div data-role="header">
+        <h1>GradeStar</h1>
+      </div><!-- /header -->
+
+      <div data-role="content" >
+	<a href="#ParentView" data-role="button">Parent Login</a>
+	<a href="#StudentView" data-role="button">Student Login</a>
+      </div>
+    </div><!-- Login -->
+
+    <!-- Parent View -->
+    <div data-role="page" id="ParentView">
+
+      <div data-role="header">
+        <h1>GradeStar</h1>
+      </div><!-- /header -->
+
+      <div data-role="content" >
+        <h2>Reward zone</h2> 
+        <ul data-role="listview" data-inset="true" data-divider-theme="d">
+          <li><a href="#"> Buy staff</a></li>
+        </ul>        
+        <h2>Goal list</h2>     
+        <ul data-role="listview" data-inset="true" data-divider-theme="d">
+          <li><a href="#GoalView">A+ Math</a></li>
+          <li><a href="#GoalView">3 A's</a></li>
+          <li><a href="#GoalView">Wash my car</a></li>
+          <li><a href="#GoalView">First 3 places in Match competition</a></li>
+        </ul>
+      </div>
+      
+    </div><!-- Parent View -->
+
+    <!-- Student View -->
     <div data-role="page" id="StudentView">
 
       <div data-role="header">
@@ -44,9 +80,9 @@
         </ul>
       </div>
 
-    </div><!-- /page one -->
+    </div><!-- Student View -->
 
-    <!-- Start of second page: #two -->
+    <!-- Reward View -->
     <div data-role="page" id="RewardView" data-theme="a">
 
       <div data-role="header">
@@ -76,9 +112,9 @@
         </ul>
       </div><!-- /content -->
 
-    </div><!-- /page two -->
+    </div><!-- Reward View -->
 
-    <!-- Start of third page: #popup -->
+    <!-- Goal View -->
     <div data-role="page" id="GoalView">
 
       <div data-role="header" data-theme="e">
@@ -106,7 +142,7 @@
 
       </div><!-- /content -->
 
-    </div><!-- /page popup -->
+    </div><!-- Goal View -->
 
   </body>
 </html>

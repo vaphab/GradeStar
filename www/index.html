@@ -126,12 +126,10 @@
           <li><a href="#RewardView"> Buy stuff</a></li>
         </ul>        
         <h2>Goal list</h2>     
-        <ul data-role="listview" data-inset="true" data-divider-theme="d">
-          <li><a href="#GoalView">A+ Math</a></li>
-          <li><a href="#GoalView">3 A's</a></li>
-          <li><a href="#GoalView">Wash my car</a></li>
-          <li><a href="#GoalView">First 3 places in Match competition</a></li>
-        </ul>
+        <ul id="goalList" data-role="listview" data-inset="true" data-divider-theme="d">
+          <!-- Here is added dynamically goals --> 
+        </ul> 
+        <a data-role="button" data-theme="b" onclick="addGoal();">Add goal</a>
       </div>
 
     </div><!-- Student View -->
@@ -164,6 +162,7 @@
             <p>2000 Stars</p></a>
           </li>
         </ul>
+        <a href="#GoalView" data-role="button" data-theme="b" onclick="AddReward();">Add reward</a>
       </div><!-- /content -->
 
     </div><!-- Reward View -->
@@ -176,23 +175,26 @@
       </div><!-- /header -->
 
       <div data-role="content" data-theme="d">
-        <h2>Wash my car</h2>
+        <label for="textarea">Name:</label>
+        <h2><input type="text" id="goalName"></h2>
 
         <label for="textarea">Description:</label>
-        <textarea cols="40" rows="8" name="textarea" disabled  id="textarea">Wash, wax and vacuum!</textarea>
+        <textarea  cols="40" rows="8" name="textarea"   id="goalDescription">Wash, wax and vacuum!</textarea>
 
         <label for="date">Date:</label>
-        <input type="date" name="date" id="date" disabled value="15/12/2013">
+        <input type="date" name="date" id="goalDate"  value="15/12/2013">
 
         <label for="file">Upload image:</label>
         <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-          <img src="http://www.etftrends.com/wp-content/uploads/2009/04/plus_sign.jpg" width="100%" onclick="captureImage();"> </img>
-          <div id='newPhotos'/>
-          <img src="http://www.musclecarbabes.com/car_wash_girl_0002.jpg" width="100%" data-rel="external"> </img>
-          <img src="http://www.allfordmustangs.com/photopost/data/3817/001232.JPG" width="100%"> </img>
-          <img src="http://i.olhares.com/data/big/289/2892183.jpg" width="100%"> </img>
-          <img src="http://3.bp.blogspot.com/_f6jKw0SgB14/S9MUu4eiBaI/AAAAAAAAAV4/QotQALMtL5E/s1600/hot_maxim_girls_car_wash_07.jpg" width="100%"> </img>
-        </fieldset> 
+          <img src="http://www.etftrends.com/wp-content/uploads/2009/04/plus_sign.jpg" width="10%" onclick="captureImage();"> </img>
+          <img id='newPhoto0' src="" widht="100%"></img>
+          <img id='newPhoto2' src="" widht="100%"></img>
+        </fieldset>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a"><button type="button" onclick='$.mobile.changePage("#StudentView");'>Cancel</button></div>
+            <div class="ui-block-b"><button type="button" onclick='saveGoal();'>Save</button></div> 
+        </div>
 
       </div><!-- /content -->
 

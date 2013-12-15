@@ -65,7 +65,6 @@ function captureImage() {
 }
 
 function displayPhoto(imageData){
-  alert('display'+nImages);
   $('#newPhoto'+nImages).attr('src',"data:image/jpeg;base64," + imageData);
   nImages += 1;
 }

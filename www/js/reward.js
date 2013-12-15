@@ -3,6 +3,7 @@ var maxIdGoal = 0;
 var goal = [];
 var nImages = 0;
 function saveGoal(){
+  alert('save:' + idGoal);
   if (maxIdGoal < idGoal) {
     maxIdGoal = idGoal;
     id = "goal_"+idGoal
@@ -22,6 +23,7 @@ function saveGoal(){
 }
 
 function showGoal(idGoal){
+  alert('show:' + idGoal);
   $('#goalName').val(goal[idGoal]["name"]);
   $('#goalDescription').val(goal[idGoal]["description"]);
   $('#goalDate').val(goal[idGoal]["date"]);
@@ -31,6 +33,7 @@ function showGoal(idGoal){
 }
 
 function addGoal(){
+  alert('add:' + idGoal);
   idGoal = maxIdGoal+1;
   $.mobile.changePage('#GoalView');
   nImages = 0;

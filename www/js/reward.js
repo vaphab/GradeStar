@@ -21,8 +21,6 @@ function captureImage() {
 }
 
 function displayPhoto(imageData){
-   var htmlcode = '<img id="newPhoto1" src="data:image/jpeg;base64,' + imageData+ '" width="100%"> </img> ' + $('#newPhoto').html();
-  alert(htmlcode);
-   $('#newPhoto').html(htmlcode);
+   $('#newPhoto').attr('src',"data:image/jpeg;base64," + imageData);
 }
 

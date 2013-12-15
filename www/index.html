@@ -19,6 +19,14 @@
     <!--script type="text/javascript">
     app.initialize();
     </script-->
+    <script>
+      /*$(function() {
+          var navBarStudents = $("#NavBarStudents");
+          navBarStudents.click(function() {
+              $("#ParentViewContent").html($("#StudentList").html());
+          });
+      });*/
+    </script>
   </head>
 
   <body>
@@ -39,25 +47,48 @@
     <!-- Parent View -->
     <div data-role="page" id="ParentView">
 
-      <div data-role="header">
+      <div data-role="header" data-id="parent" data-position="fixed">
         <h1>GradeStar</h1>
+	<div data-role="navbar">
+          <ul>
+            <li><a href="#ParentView" class="ui-btn-active ui-state-persist">News Feed</a></li>
+            <li><a href="#StudentList">Students</a></li>
+          </ul>
+	</div><!-- /navbar -->
       </div><!-- /header -->
 
-      <div data-role="content" >
-        <h2>Reward zone</h2> 
+      <div id="ParentViewContent" data-role="content" >
+        <h2>News feed</h2> 
         <ul data-role="listview" data-inset="true" data-divider-theme="d">
-          <li><a href="#"> Buy staff</a></li>
-        </ul>        
-        <h2>Goal list</h2>     
-        <ul data-role="listview" data-inset="true" data-divider-theme="d">
-          <li><a href="#GoalView">A+ Math</a></li>
-          <li><a href="#GoalView">3 A's</a></li>
-          <li><a href="#GoalView">Wash my car</a></li>
-          <li><a href="#GoalView">First 3 places in Match competition</a></li>
+          <li><a href="#StudentView">Maggie gets an A+!</a></li>
+          <li><a href="#StudentView">Bart barely passes the test!</a></li>
         </ul>
       </div>
       
     </div><!-- Parent View -->
+
+    <!-- Student List -->
+    <div data-role="page" id="StudentList">
+
+      <div data-role="header" data-id="parent" data-position="fixed">
+        <h1>GradeStar</h1>
+	<div data-role="navbar">
+          <ul>
+            <li><a href="#ParentView">News Feed</a></li>
+            <li><a href="#StudentList" class="ui-btn-active ui-state-persist">Students</a></li>
+          </ul>
+	</div><!-- /navbar -->
+      </div><!-- /header -->
+
+      <div id="ParentViewContent" data-role="content" >
+	<h2>Students</h2> 
+	<ul data-role="listview" data-inset="true" data-divider-theme="d">
+          <li><a href="#StudentView">Bart</a></li>
+          <li><a href="#StudentView">Maggie</a></li>
+	</ul>
+      </div>
+      
+    </div><!-- Student List -->
 
     <!-- Student View -->
     <div data-role="page" id="StudentView">

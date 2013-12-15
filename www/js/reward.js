@@ -1,9 +1,9 @@
 
 // Called when capture operation is finished
 //
-function captureSuccess(imageURI) {
-  console.log('CaptureSuccess! '+imageURI);
-  displayPhoto(imageURI);
+function captureSuccess(imageData) {
+  console.log('CaptureSuccess! '+imageData);
+  displayPhoto(imageData);
 }
 
 // Called if something bad happens.
@@ -20,10 +20,10 @@ function captureImage() {
   // Take picture using device camera and retrieve image as base64-encoded string
   console.log('Capture image');
   console.log('destination Type: '+Camera.DestinationType.FILE_URI);
-  navigator.camera.getPicture(captureSuccess, captureError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+  navigator.camera.getPicture(captureSuccess, captureError, { quality: 50, destinationType: Camera.DestinationType.DATA_URL});
 }
 
-function displayPhoto(imageURI){
-   $('#newPhoto').attr('src', imageURI);
+function displayPhoto(imageData){
+   $('#newPhoto').attr('src', "data:image/jpeg;base64," + imageData);
 }
 

@@ -61,7 +61,7 @@ function captureError(error) {
 function captureImage() {
   // Launch device camera application, 
   // Take picture using device camera and retrieve image as base64-encoded string
-  //navigator.camera.getPicture(captureSuccess, captureError, { quality: 50, destinationType: Camera.DestinationType.DATA_URL});
+  navigator.camera.getPicture(captureSuccess, captureError, { quality: 50, destinationType: Camera.DestinationType.DATA_URL});
 }
 
 function displayPhoto(imageData){

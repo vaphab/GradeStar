@@ -51,5 +51,7 @@
     <content src="index.html" />
     <feature name="Camera">
           <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-    </feature>
+        </feature>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
 </widget>

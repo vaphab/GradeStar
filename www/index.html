@@ -20,12 +20,15 @@
     app.initialize();
     </script-->
     <script>
-      /*$(function() {
-          var navBarStudents = $("#NavBarStudents");
-          navBarStudents.click(function() {
-              $("#ParentViewContent").html($("#StudentList").html());
+      $(function() {
+          $("#addStudentCancel").on("click", function() {
+              $.mobile.changePage("#StudentList");
           });
-      });*/
+          $("#addStudentSave").on("click", function() {
+              $("#studentList").append("<li><a href='#StudentView'>Bart2</a></li>");
+              $.mobile.changePage("#StudentList");
+          });
+      });
     </script>
   </head>
 
@@ -57,8 +60,7 @@
 	</div><!-- /navbar -->
       </div><!-- /header -->
 
-      <div id="ParentViewContent" data-role="content" >
-        <h2>News feed</h2> 
+      <div data-role="content" >
         <ul data-role="listview" data-inset="true" data-divider-theme="d">
           <li><a href="#StudentView">Maggie gets an A+!</a></li>
           <li><a href="#StudentView">Bart barely passes the test!</a></li>
@@ -80,12 +82,33 @@
 	</div><!-- /navbar -->
       </div><!-- /header -->
 
-      <div id="ParentViewContent" data-role="content" >
-	<h2>Students</h2> 
-	<ul data-role="listview" data-inset="true" data-divider-theme="d">
+      <div data-role="content" >
+	<a href="#AddStudentView" data-role="button">Add Student</a>
+	<ul id="#studentList" data-role="listview" data-inset="true" data-divider-theme="d">
           <li><a href="#StudentView">Bart</a></li>
           <li><a href="#StudentView">Maggie</a></li>
 	</ul>
+      </div>
+      
+    </div><!-- Student List -->
+
+    <!-- Add Student -->
+    <div data-role="page" id="AddStudentView">
+
+      <div data-role="header">
+        <h1>GradeStar</h1>
+      </div><!-- /header -->
+
+      <div data-role="content" >
+        <h2>Add Student</h2> 
+	<form>
+	  <label for="name">Name:</label>
+	  <input name="name" id="name" value="" type="text">
+	</form>
+	<fieldset class="ui-grid-a">
+	  <div class="ui-block-a"><button type="submit" id="addStudentCancel" data-theme="b">Cancel</button></div>
+	  <div class="ui-block-b"><button type="submit" id="addStudentSave" data-theme="b">Save</button></div>
+	</fieldset>
       </div>
       
     </div><!-- Student List -->
@@ -100,7 +123,7 @@
       <div data-role="content" >
         <h2>Reward zone</h2> 
         <ul data-role="listview" data-inset="true" data-divider-theme="d">
-          <li><a href="#RewardView"> Buy staff</a></li>
+          <li><a href="#RewardView"> Buy stuff</a></li>
         </ul>        
         <h2>Goal list</h2>     
         <ul data-role="listview" data-inset="true" data-divider-theme="d">

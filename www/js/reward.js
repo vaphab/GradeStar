@@ -2,14 +2,14 @@ var idGoal = 0;
 var maxIdGoal = 0;
 var goal = [];
 var nImages = 0;
+
 function saveGoal(){
-  alert('save:' + idGoal);
   if (maxIdGoal < idGoal) {
     maxIdGoal = idGoal;
-    id = "goal_"+idGoal
+    id = "goal_"+idGoal;
     $('#goalList').append('<li><a id="'+id+'">'+$('#goalName').val()+'</a></li>').listview('refresh');
-   $('#'+id).bind( "click", function() {
-        showGoal(idGoal)
+    $('#'+id).bind( "click",{ ig: idGoal }, function(event) {
+      showGoal(event.data.ig)
     });
   }
   goal[idGoal] = {
@@ -22,18 +22,17 @@ function saveGoal(){
   $.mobile.changePage('#StudentView');
 }
 
-function showGoal(idGoal){
-  alert('show:' + idGoal);
-  $('#goalName').val(goal[idGoal]["name"]);
-  $('#goalDescription').val(goal[idGoal]["description"]);
-  $('#goalDate').val(goal[idGoal]["date"]);
-  $('#newPhoto').val(goal[idGoal]["image"]);
-  $('#newPhoto2').val(goal[idGoal]["image2"]);
+function showGoal(idG){
+  $('#goalName').val(goal[idG]["name"]);
+  $('#goalDescription').val(goal[idG]["description"]);
+  $('#goalDate').val(goal[idG]["date"]);
+  $('#newPhoto').val(goal[idG]["image"]);
+  $('#newPhoto2').val(goal[idG]["image2"]);
   $.mobile.changePage('#GoalView');
+  idGoal= idG;
 }
 
 function addGoal(){
-  alert('add:' + idGoal);
   idGoal = maxIdGoal+1;
   $.mobile.changePage('#GoalView');
   nImages = 0;
@@ -66,7 +65,7 @@ function captureImage() {
 }
 
 function displayPhoto(imageData){
-   $('#newPhoto'+nImages).attr('src',"data:image/jpeg;base64," + imageData);
-   nImages += 1;
+  $('#newPhoto'+nImages).attr('src',"data:image/jpeg;base64," + imageData);
+  nImages += 1;
 }
 
